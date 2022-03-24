@@ -1,4 +1,5 @@
 ﻿using ConsumeSOAP.Service;
+using CountryInfo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,6 +50,25 @@ namespace ConsumeSOAP.Controllers
         public IActionResult Test()
         {
             return Ok("works");
+        }
+
+        [HttpGet]
+        [Route("api/capitalWebRef/test")]
+        public IActionResult WebRef()
+        {
+            CapitalCityRequestBody capitalCityRequest = new CapitalCityRequestBody("IND");
+            CapitalCityRequest capitalCityRequest1 = new CapitalCityRequest(capitalCityRequest);
+            
+
+
+            CapitalCityResponse capitalCityResponse = new CapitalCityResponse();
+            CapitalCityResponseBody capitalCityResponseBody = new CapitalCityResponseBody();
+
+
+
+
+
+            return Ok();
         }
     }
 }
